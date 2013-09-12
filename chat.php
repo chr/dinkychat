@@ -156,7 +156,7 @@ $(function() {
 </script>
 
 </head>
-<body style='z-index: 100; background-color: red; width: 100%; height: 90%;'>
+<body style='z-index: 100; width: 100%; height: 90%;'>
 <div id='chatbox'></div>
 <form id='chatref'>
 <label id='chatlabel'></label>
