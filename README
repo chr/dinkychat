@@ -1,0 +1,21 @@
+DinkyChat
+=========
+
+A little chat program: it's a single PHP file.
+
+Put it somewhere accessible to a webserver and start chatting.
+
+TODO
+----
+
+A lot. For instance:
+
+* Encryption: http://code.google.com/p/crypto-js/
+* SQL or webstorage
+* etc.
+
+BUGS
+----
+
+Yes.
+
