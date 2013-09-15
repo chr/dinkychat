@@ -3,12 +3,14 @@
 // DinkyChat is free and unencumbered public domain software. For more
 // information see http://unlicense.org/ or the accompanying UNLICENSE file.
 
+
+// http://www.php.net/manual/it/function.array-search.php#94598
 function getKeyPositionInArray($haystack, $keyNeedle)
 {
     $i = 0;
     foreach($haystack as $key)
     {
-        if($key["time"] == $keyNeedle)
+        if($key['time'] == $keyNeedle)
         {
             return $i;
         }
@@ -18,7 +20,7 @@ function getKeyPositionInArray($haystack, $keyNeedle)
 
 $now = time();
 
-$chat_file = "json.txt";
+$chat_file = 'json.txt';
 
 $contents = file_get_contents($chat_file);
 $results = json_decode($contents, true);
@@ -26,11 +28,10 @@ $results = json_decode($contents, true);
 $x = end($results);
 
 if ( $_COOKIE['time'] == '' ) {
-	setcookie('time', $x["time"], time()+2592000);
+	setcookie('time', $x['time'], time()+2592000);
 } else {
 	$id_last = $_COOKIE['time'];
 }
-
 
 $str = $_POST['msg'];
 $name = $_POST['name'];
@@ -39,12 +40,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	$txt = array('time' => $now, 'name' => $name, 'msg' => $str);
 	$results[] = $txt;
 	file_put_contents($chat_file, json_encode($results), LOCK_EX);
-} elseif ( $_GET['chat']==1 && $id_last < $x["time"] ) {
+} elseif ( $_GET['chat']==1 && $id_last < $x['time'] ) {
 	// print last messages
 	$i = getKeyPositionInArray($results, $id_last) + 1;
 	echo json_encode(array_slice($results,$i));
 
-	setcookie('time', $x["time"], time()+2592000);
+	setcookie('time', $x['time'], time()+2592000);
 } else {
 $html = "
 <html>
@@ -130,7 +131,7 @@ $(function() {
 			url: 'chat.php',
 			data: form.serialize()
 		}).fail(function() {
-			alert('NON INVIATO!');
+			alert('A problem occurred.');
 		});
 
 		event.preventDefault(); // Prevent submission via browser.
