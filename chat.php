@@ -216,7 +216,7 @@ $(function() {
     <li><a href='#stickers-1'>emoticons 1</a></li>
     <li><a href='#stickers-2'>emoticons 2</a></li>
   </ul>
-<div id='stickers0'>
+<div id='stickers-1'>
 	<a href='#'><img src='http://www.iconsdb.com/icons/preview/soylent-red/emoticon-xl.png'></a>
 	<a href='#'><img src='http://www.iconsdb.com/icons/preview/soylent-red/emoticon-57-xl.png'></a>
 	<a href='#'><img src='http://www.iconsdb.com/icons/preview/soylent-red/emoticon-14-xl.png'></a>
